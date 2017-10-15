@@ -1,0 +1,12 @@
+{
+    "appName":
+    {
+        "message": "StockQuote extension",
+        "description": "The name of the application"
+    },
+    "appDescription":
+    {
+        "message": "Check quotes of stocks",
+        "description": "The description of the application"
+    }
+}

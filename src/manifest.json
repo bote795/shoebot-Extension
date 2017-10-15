@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Awesome Extension",
+    "description": "Awesome",
+    "permissions": ["storage", "tabs", "activeTab", "http://*/*", "https://*/*"],
+    "version": "0.1",
+    "default_locale": "en",
+    "browser_action":
+    {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+    {
+        "matches": ["http://www.footlocker.com/*"],
+        "js": ["scripts/content.js"]
+    }]
+}
