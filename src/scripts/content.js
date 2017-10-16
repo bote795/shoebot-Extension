@@ -35,8 +35,10 @@
             last_name: "testLastName",
             street_address: "street address",
             apt_unit: null,
+            zip_code: "95640",
             city: "city",
             state: "state",
+            phone: "956",
             email: "email"
         };
         opts.promo_code = null;
