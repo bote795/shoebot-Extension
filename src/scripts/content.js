@@ -1,28 +1,52 @@
 (function()
 {
-    console.log("inside shoe bot extension");
     var url = window.location.href;
     var opts = {};
-    loadOptions();
-    if (isUrl('footlocker.com'))
+
+    async function init()
     {
-        //selecting shoe
-        if (isUrl('footlocker.com/product/model'))
+        await loadOptions();
+        if (isUrl('footlocker.com'))
         {
-            footLockerAutoADD();
-        }
-        else if (isUrl("footlocker.com/shoppingcart"))
-        {
-            checkout();
+            //selecting shoe
+            if (isUrl('footlocker.com/product/model'))
+            {
+                footLockerAutoADD();
+            }
+            else if (isUrl("footlocker.com/shoppingcart"))
+            {
+                footLockercheckout();
+            }
+            else if (isUrl("footlocker.com/checkout"))
+            {
+                console.log("fill in form for user info");
+            }
         }
     }
-    /**
-     * TODO: need to make is so that each dif uri/page activates specific functions
-     */
-    function loadOptions()
+    init();
+    async function loadOptions()
     {
+        await delay(100);
         opts.PayPal = false;
         opts.size = "09.5";
+        opts.billing_address = {
+            country: "US",
+            first_name: "test",
+            last_name: "testLastName",
+            street_address: "street address",
+            apt_unit: null,
+            city: "city",
+            state: "state",
+            email: "email"
+        };
+        opts.promo_code = null;
+        opts.payment_method = {
+            card_number: "",
+            card_expire_month: "",
+            card_expire_year: "",
+            card_csv: ""
+        }
+        return opts;
     }
 
 
@@ -53,15 +77,22 @@
         clickNode(document.querySelector("button[title='Add To Cart']"));
 
         //wait for pop up to come up view cart and checkout	
-        delay(1000)
-            .then(function()
+        checkForItemOrDelay = async function()
+        {
+
+            await delay(1000);
+            let node = document.querySelectorAll("#miniAddToCart_actions > div.top_row > a")[1];
+            if (node)
             {
-                clickNode(document.querySelectorAll("#miniAddToCart_actions > div.top_row > a")[1]);
-                return {};
-            })
+                return clickNode(node);
+            }
+            return checkForItemOrDelay();
+
+        };
+        checkForItemOrDelay();
     }
 
-    function checkout()
+    function footLockercheckout()
     {
         let checkoutBtn = null;
         if (opts.PayPal)

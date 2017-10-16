@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Awesome Extension",
     "description": "Awesome",
-    "permissions": ["storage", "tabs", "activeTab", "http://*/*", "https://*/*"],
+    "permissions": ["storage", "tabs", "activeTab", "https://www.footlocker.com/*"],
     "version": "0.1",
     "default_locale": "en",
     "browser_action":
