@@ -6,7 +6,7 @@
     async function init()
     {
         await loadOptions();
-        if (isUrl('footlocker.com'))
+        if (isUrl('footlocker.com') && !opts.disable)
         {
             //selecting shoe
             if (isUrl('footlocker.com/product/model'))
@@ -17,10 +17,10 @@
             {
                 footLockercheckout();
             }
-            else if (isUrl("footlocker.com/checkout"))
-            {
-                console.log("fill in form for user info");
-            }
+            // else if (isUrl("footlocker.com/checkout"))
+            // {
+            //     console.log("fill in form for user info");
+            // }
         }
     }
     init();
@@ -28,26 +28,8 @@
     {
         await delay(100);
         opts.PayPal = false;
+        opts.disable = false;
         opts.size = "09.5";
-        opts.billing_address = {
-            country: "US",
-            first_name: "test",
-            last_name: "testLastName",
-            street_address: "street address",
-            apt_unit: null,
-            zip_code: "95640",
-            city: "city",
-            state: "state",
-            phone: "956",
-            email: "email"
-        };
-        opts.promo_code = null;
-        opts.payment_method = {
-            card_number: "",
-            card_expire_month: "",
-            card_expire_year: "",
-            card_csv: ""
-        }
         return opts;
     }
 

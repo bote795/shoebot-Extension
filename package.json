@@ -1,0 +1,32 @@
+{
+  "name": "shoebot-extension",
+  "version": "1.0.0",
+  "description": "helps you add a shoe to checkout for footlocker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bote795/shoebot-Extension.git"
+  },
+  "keywords": [
+    "shoebot",
+    "footlocker",
+    "bot",
+    "shoes",
+    "checkout"
+  ],
+  "author": "Nicolas Botello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bote795/shoebot-Extension/issues"
+  },
+  "homepage": "https://github.com/bote795/shoebot-Extension#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.0.0"
+  }
+}
