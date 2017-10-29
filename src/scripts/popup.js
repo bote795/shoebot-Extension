@@ -48,6 +48,8 @@ async function init()
             document.getElementById("enable").setAttribute("checked", "")
         }
         document.getElementById("submit").addEventListener('click', saveData);
+        $('#shoe_size').val(options.size).trigger('contentChanged');
+        $('select').material_select();
     }
     catch (e)
     {

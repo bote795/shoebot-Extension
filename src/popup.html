@@ -6,14 +6,32 @@
   	<link rel="stylesheet" href="styles/materialize.min.css">
   	<link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
-<body>
+<body class="grey lighten-3">
 	<div id="body" class="container">
 	</div>
 	<script id="entry-template" type="text/x-handlebars-template">
 		<h4>{{title}}</h1>
 		<div class="row">
 			<div class="input-field col s12">
-		          <input value="{{size}}" id="shoe_size" type="text" class="validate">
+		          	<select id="shoe_size">
+					  <option value="06.0">06.0</option>
+					  <option value="06.5">06.5</option>
+					  <option value="07.0">07.0</option>
+					  <option value="07.5">07.5</option>
+					  <option value="08.0">08.0</option>
+					  <option value="08.5">08.5</option>
+					  <option value="09.0">09.0</option>
+					  <option value="09.5">09.5</option>
+					  <option value="10.0">10.0</option>
+					  <option value="10.5">10.5</option>
+					  <option value="11.0">11.0</option>
+					  <option value="11.5">11.5</option>
+					  <option value="12.0">12.0</option>
+					  <option value="12.5">12.5</option>
+					  <option value="13.0">13.0</option>
+					  <option value="14.0">14.0</option>
+					  <option value="15.0">15.0</option>
+					</select>
 		          <label for="shoe_size">{{form.shoeSize}}</label>
 	        </div>
 		</div>
