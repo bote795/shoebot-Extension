@@ -6,7 +6,7 @@
     async function init()
     {
         await loadOptions();
-        if (isUrl('footlocker.com') && !opts.disable)
+        if (isUrl('footlocker.com') && opts.enable)
         {
             //selecting shoe
             if (isUrl('footlocker.com/product/model'))
@@ -17,19 +17,13 @@
             {
                 footLockercheckout();
             }
-            // else if (isUrl("footlocker.com/checkout"))
-            // {
-            //     console.log("fill in form for user info");
-            // }
         }
     }
     init();
     async function loadOptions()
     {
-        await delay(100);
+        opts = await getData();
         opts.PayPal = false;
-        opts.disable = false;
-        opts.size = "09.5";
         return opts;
     }
 

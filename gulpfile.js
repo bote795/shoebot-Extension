@@ -19,6 +19,10 @@ gulp.task('copyToDist:scripts', function()
 {
     return gulp.src('src/scripts/**/*.js').pipe(gulp.dest('dist/scripts'));
 });
+gulp.task('copyToDist:styles', function()
+{
+    return gulp.src('src/styles/**/*.css').pipe(gulp.dest('dist/styles'));
+});
 gulp.task('copyToDist:locales', function()
 {
     return gulp.src('src/_locales/**/*.json').pipe(gulp.dest('dist/_locales'));
@@ -27,7 +31,7 @@ gulp.task('clean-dist', function()
 {
     return del.sync(['dist']);
 });
-gulp.task('dist', ['clean-dist', 'copyToDist:html', 'copyToDist:manifest', 'copyToDist:scripts', 'copyToDist:locales'], function()
+gulp.task('dist', ['clean-dist', 'copyToDist:html', 'copyToDist:manifest', 'copyToDist:scripts', 'copyToDist:locales', 'copyToDist:styles'], function()
 {
     var date = new Date();
     return gulp.src('./dist/**')

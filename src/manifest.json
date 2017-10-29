@@ -12,6 +12,8 @@
     "content_scripts": [
     {
         "matches": ["https://www.footlocker.com/*"],
-        "js": ["scripts/content.js"]
-    }]
+        "js": ["scripts/chrome_storage.js", "scripts/content.js"]
+    }],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+
 }

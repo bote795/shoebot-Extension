@@ -8,5 +8,28 @@
     {
         "message": "Allows you to add a shoe to your checkout for footlocker.com",
         "description": "The description of the application"
+    },
+    "shoeSize":
+    {
+        "message": "Shoe Size",
+        "description": "Label for Shoe size"
+    },
+    "enable":
+    {
+        "message": "Enable",
+        "description": "Label for enable toggle"
+    },
+    "submit":
+    {
+        "message": "Submit",
+        "description": "Submit button"
+    },
+    "on":
+    {
+        "message": "ON"
+    },
+    "off":
+    {
+        "message": "Off"
     }
 }
