@@ -2,8 +2,6 @@ async function saveData()
 {
     const shoeSize = document.getElementById("shoe_size").value;
     const enable = document.getElementById("enable").checked;
-    console.log(shoeSize);
-    console.log(enable);
     try
     {
         var options = set(
