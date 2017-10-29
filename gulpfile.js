@@ -15,9 +15,15 @@ gulp.task('copyToDist:manifest', function()
     return gulp.src('src/manifest.json')
         .pipe(gulp.dest('dist'));
 });
-gulp.task('copyToDist:scripts', function()
+gulp.task('copyToDist:scripts', ['copyToDist:libs'], function()
 {
-    return gulp.src('src/scripts/**/*.js').pipe(gulp.dest('dist/scripts'));
+    return gulp.src('src/scripts/**/*.js')
+        .pipe(gulp.dest('dist/scripts'));
+});
+gulp.task('copyToDist:libs', function()
+{
+    return gulp.src('src/libs/**/*.js')
+        .pipe(gulp.dest('dist/libs'));
 });
 gulp.task('copyToDist:styles', function()
 {
