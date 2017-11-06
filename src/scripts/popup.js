@@ -1,3 +1,8 @@
+function createToast(messagekey, time, type)
+{
+    Materialize.toast(chrome.i18n.getMessage(messagekey), time, type);
+}
+
 async function saveData()
 {
     const shoeSize = document.getElementById("shoe_size").value;
@@ -13,10 +18,12 @@ async function saveData()
             }
         });
         console.info("Successfully saved data");
+        createToast('sucessSave', 1000, 'light-green');
     }
     catch (e)
     {
         console.warn("There was an error saving the data: ", e);
+        createToast('errorSave', 1000, 'red');
     }
 }
 async function init()
@@ -52,6 +59,7 @@ async function init()
     catch (e)
     {
         console.warn("There was an error getting the data: ", e);
+        createToast('errorGetData', 1000, 'red');
     }
 }
 init();

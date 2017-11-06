@@ -31,5 +31,13 @@
     "off":
     {
         "message": "Off"
+    },
+    "sucessSave":
+    {
+        "message": "Successfully saved!"
+    },
+    "errorSave":
+    {
+        "message": "Error saving data!"
     }
 }
